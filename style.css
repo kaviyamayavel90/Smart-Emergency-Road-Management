@@ -1,0 +1,365 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0d47a1, #00bcd4);
+    color: #222;
+}
+
+/* Main Dashboard */
+.container {
+    width: 90%;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Header */
+h1 {
+    margin-bottom: 8px;
+    color: #0d47a1;
+    font-size: 32px;
+}
+
+.dashboard-subtitle {
+    margin-top: 0;
+    color: #555;
+    font-size: 16px;
+}
+
+#clock {
+    margin: 15px 0 5px;
+    color: #0d47a1;
+}
+
+#date {
+    margin-top: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+/* System Status */
+.system-status {
+    display: inline-block;
+    margin: 10px auto 20px;
+    padding: 9px 18px;
+    border-radius: 25px;
+    background: #d4edda;
+    color: #155724;
+    font-weight: bold;
+    border: 1px solid #28a745;
+}
+
+/* Traffic Signal */
+.traffic {
+    width: 100px;
+    background: #171717;
+    margin: 20px auto;
+    padding: 12px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.light {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #555;
+    margin: 14px auto;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #333;
+}
+
+/* Section Heading */
+h2 {
+    color: #0d47a1;
+    margin-top: 25px;
+}
+
+/* Emergency Buttons */
+button {
+    padding: 13px 20px;
+    margin: 7px;
+    border: none;
+    border-radius: 10px;
+    background: #0d47a1;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.25s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background: #1565c0;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Location */
+.container > p {
+    margin: 20px 0;
+}
+
+/* Information Cards */
+.route-status,
+.route-info,
+.alert-box,
+.activity-log,
+.history-box,
+.traffic-level,
+.response-time {
+    margin-top: 15px;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: #f8fafc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.route-status h3,
+.route-info h3,
+.alert-box h3,
+.activity-log h3,
+.history-box h3,
+.traffic-level h3,
+.response-time h3 {
+    margin-top: 0;
+    color: #0d47a1;
+}
+
+.route-status p,
+.route-info p,
+.alert-box p,
+.activity-log p,
+.history-box p,
+.traffic-level p,
+.response-time p {
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+/* Alert */
+.alert-box {
+    background: #fff5f5;
+    border-left: 5px solid #e53935;
+}
+
+/* History */
+.history-box {
+    background: #f3f8ff;
+}
+
+/* Activity Log */
+.activity-log {
+    background: #f7f7f7;
+}
+
+/* Emergency Route Map */
+.map-box {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f5f9ff;
+    border: 1px solid #cfd8dc;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.map-box h3 {
+    margin-top: 0;
+    color: #0d47a1;
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background: #a5d6a7;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #78909c;
+}
+
+/* Roads */
+.road {
+    position: absolute;
+    background: #555;
+}
+
+.road-horizontal {
+    width: 100%;
+    height: 65px;
+    left: 0;
+    top: 98px;
+}
+
+.road-vertical {
+    width: 65px;
+    height: 100%;
+    left: 44%;
+    top: 0;
+}
+
+/* Road markings */
+.road-horizontal::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    top: 30px;
+    left: 0;
+    background: repeating-linear-gradient(
+        to right,
+        white 0px,
+        white 25px,
+        transparent 25px,
+        transparent 45px
+    );
+}
+
+.road-vertical::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 25px,
+        transparent 25px,
+        transparent 45px
+    );
+}
+
+/* Map Locations */
+.location {
+    position: absolute;
+    z-index: 5;
+    font-size: 25px;
+    text-align: center;
+}
+
+.location span {
+    display: block;
+    background: white;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.start {
+    left: 10px;
+    top: 105px;
+}
+
+.destination {
+    right: 10px;
+    top: 105px;
+}
+
+/* Emergency Vehicle */
+.vehicle {
+    position: absolute;
+    z-index: 10;
+    left: 25%;
+    top: 115px;
+    font-size: 28px;
+    transition: left 2s ease-in-out;
+}
+
+/* Map Status */
+#mapStatus {
+    margin: 12px 0 0;
+    font-weight: bold;
+    color: #0d47a1;
+}
+
+/* Status Message */
+#status {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #eef5ff;
+    color: #0d47a1;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+
+    .container {
+        width: 95%;
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    button {
+        width: 90%;
+        margin: 6px auto;
+    }
+
+    .map {
+        height: 220px;
+    }
+}
+/* ===============================
+   🚑 Emergency Route Progress
+   =============================== */
+
+.route-progress {
+    margin-top: 15px;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background: #f8fafc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.route-progress h3 {
+    margin-top: 0;
+    color: #0d47a1;
+}
+
+#progressText {
+    margin-bottom: 12px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progressFill {
+    width: 0%;
+    height: 100%;
+    background: limegreen;
+    border-radius: 10px;
+    transition: width 1s ease;
+}

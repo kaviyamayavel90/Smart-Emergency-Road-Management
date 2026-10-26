@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Emergency Road Management</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚑 Smart Emergency Road Management</h1>
+
+<p class="dashboard-subtitle">
+    🚦 Intelligent Emergency Traffic Monitoring System
+</p>
+
+<h2 id="clock"></h2>
+
+<h3 id="date"></h3>
+
+
+<!-- 🚦 Traffic Signal -->
+
+<div class="traffic">
+
+    <div class="light red" id="red"></div>
+    <div class="light yellow" id="yellow"></div>
+    <div class="light green" id="green"></div>
+
+</div>
+
+
+<!-- 🚨 Emergency Control Panel -->
+
+<h2>Emergency Control Panel</h2>
+
+<div class="system-status">
+    🟢 System Online
+</div>
+
+
+<!-- ⭐ Emergency Priority Indicator -->
+
+<div id="priorityIndicator"
+     style="
+     margin: 10px auto;
+     padding: 10px;
+     max-width: 320px;
+     border-radius: 10px;
+     background: #e8f5e9;
+     border: 2px solid #4caf50;
+     font-weight: bold;
+     text-align: center;
+     color: #1b5e20;
+     ">
+
+    🟢 NO ACTIVE EMERGENCY
+
+</div>
+
+
+<!-- Emergency Buttons -->
+
+<button onclick="ambulance()">
+    🚑 Ambulance
+</button>
+
+<button onclick="police()">
+    🚓 Police
+</button>
+
+<button onclick="fireengine()">
+    🚒 Fire Engine
+</button>
+
+<button onclick="resetEmergency()">
+    🔄 Reset Emergency
+</button>
+
+
+<p>
+    <b>📍 Location:</b> Coimbatore City Junction
+</p>
+
+
+<!-- 🗺️ Emergency Route Map -->
+
+<div class="map-box">
+
+    <h3>🗺️ Emergency Route Map</h3>
+
+    <div class="map">
+
+        <div class="road road-horizontal"></div>
+        <div class="road road-vertical"></div>
+
+        <div class="location start">
+            📍
+            <span>Emergency</span>
+        </div>
+
+        <div class="location destination">
+            🏥
+            <span>Destination</span>
+        </div>
+
+        <div class="vehicle" id="mapVehicle">
+            🚑
+        </div>
+
+    </div>
+
+    <p id="mapStatus">
+        Waiting for emergency vehicle...
+    </p>
+
+</div>
+
+
+<!-- 🚦 Route Status -->
+
+<div class="route-status">
+
+    <h3>🚦 Emergency Route Status</h3>
+
+    <p id="routeStatus">
+        🟢 Normal Traffic
+    </p>
+
+</div>
+
+
+<!-- 🚑 Route Progress -->
+
+<div class="route-progress">
+
+    <h3>🚑 Emergency Route Progress</h3>
+
+    <p id="progressText">
+        Waiting for emergency vehicle...
+    </p>
+
+    <div class="progress-bar">
+        <div id="progressFill"></div>
+    </div>
+
+</div>
+
+
+<!-- 🚗 Traffic Level -->
+
+<div class="traffic-level">
+
+    <h3>🚗 Traffic Level</h3>
+
+    <p id="trafficLevel">
+        🟢 Low Traffic
+    </p>
+
+</div>
+
+
+<!-- ⏱️ Response Time -->
+
+<div class="response-time">
+
+    <h3>⏱️ Estimated Response Time</h3>
+
+    <p id="responseTime">
+        5 minutes
+    </p>
+
+</div>
+
+
+<!-- 🛣️ Emergency Route -->
+
+<div class="route-info">
+
+    <h3>🛣️ Emergency Route</h3>
+
+    <p id="routeInfo">
+        No emergency vehicle detected.
+    </p>
+
+</div>
+
+
+<!-- 🚨 Emergency Alert -->
+
+<div class="alert-box">
+
+    <h3>🚨 Emergency Alert</h3>
+
+    <p id="alertMessage">
+        No active emergency.
+    </p>
+
+</div>
+
+
+<!-- 📋 Activity Log -->
+
+<div class="activity-log">
+
+    <h3>📋 Emergency Activity Log</h3>
+
+    <p id="activityLog">
+        No emergency activity yet.
+    </p>
+
+</div>
+
+
+<!-- 🕘 History -->
+
+<div class="history-box">
+
+    <h3>🕘 Recent Emergency History</h3>
+
+    <p id="history">
+        No emergency history yet.
+    </p>
+
+</div>
+
+
+<p id="status"></p>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
